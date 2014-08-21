@@ -20,11 +20,12 @@ cd build
 make
 make install
 cd ../../
+export LD_LIBRARY_PATH=$hdf5dir/lib:\$LD_LIBRARY_PATH
+export LIBRARY_PATH=$hdf5dir/lib:\$LIBRARY_PATH
 echo "export LD_LIBRARY_PATH=$hdf5dir/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
 echo "export LIBRARY_PATH=$hdf5dir/lib:\$LIBRARY_PATH" >> ~/.bashrc
 echo "export CPLUS_INCLUDE_PATH=$hdf5dir/include:\$CPLUS_INCLUDE_PATH" >> ~/.bashrc
 echo "export C_INCLUDE_PATH=$hdf5dir/include:\$C_INCLUDE_PATH" >> ~/.bashrc
-source ~/.bashrc
 echo "hdf5" >> $buildlog
 git clone https://github.com/pydata/numexpr.git
 cd numexpr
@@ -46,11 +47,12 @@ cd build
 ../moab-4.6.2/configure --enable-shared --with-hdf5=$HOME/opt/hdf5 --prefix=$HOME/.local
 make
 make install
+export LD_LIBRARY_PATH=$HOME/.local/lib:\$LD_LIBRARY_PATH
+export LIBRARY_PATH=$HOME/.local/lib:\$LIBRARY_PATH
 echo "export LD_LIBRARY_PATH=$HOME/.local/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
 echo "export LIBRARY_PATH=$HOME/.local/lib:\$LIBRARY_PATH" >> ~/.bashrc
 echo "export CPLUS_INCLUDE_PATH=$HOME/.local/include:\$CPLUS_INCLUDE_PATH" >> ~/.bashrc
 echo "export C_INCLUDE_PATH=$HOME/.local/include:\$C_INCLUDE_PATH" >> ~/.bashrc
-source ~/.bashrc
 echo "moab" >> $buildlog
 cd ../../
 wget https://pypi.python.org/packages/source/P/PyTAPS/PyTAPS-1.4.tar.gz
@@ -65,7 +67,6 @@ cd pyne
 python setup.py install --hdf5=$HOME/opt/hdf5 --user
 echo "export PATH=$HOME/.local/bin:\$PATH" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=$HOME/.local/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
-source ~/.bashrc
 cd scripts
 ./nuc_data_make
 cd ..
