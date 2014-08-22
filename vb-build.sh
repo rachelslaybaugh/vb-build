@@ -4,7 +4,7 @@ IFS=$'\n\t'
 export buildlog=$HOME/buildlog
 export hdf5dir=$HOME/opt/hdf5
 echo "Starting build" > $buildlog
-sudo apt-get install python-numpy python-scipy cython python-nose git cmake vim emacs gfortran libblas-dev liblapack-dev
+sudo apt-get install -y python-numpy python-scipy cython python-nose git cmake vim emacs gfortran libblas-dev liblapack-dev
 echo "apt" >> $buildlog
 cd $HOME
 mkdir opt
