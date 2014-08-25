@@ -1,4 +1,11 @@
 #!/bin/bash
+# This script builds the repo version of PyNE from scratch on Ubuntu 14.04.
+#
+# Run this script from any directory by issuing the command:
+# $ ./vb-build
+# After the build finishes run:
+#  $ source ~/.bashrc
+# or open a new terminal.
 set -euo pipefail
 IFS=$'\n\t'
 sudo apt-get install -y python-numpy python-scipy cython python-nose git cmake vim emacs gfortran libblas-dev liblapack-dev libhdf5-dev
