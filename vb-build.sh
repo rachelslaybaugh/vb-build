@@ -8,20 +8,12 @@
 # or open a new terminal.
 set -euo pipefail
 IFS=$'\n\t'
-sudo apt-get install -y python-numpy python-scipy cython python-nose git cmake vim emacs gfortran libblas-dev liblapack-dev libhdf5-dev
+sudo apt-get install -y python-numpy python-scipy cython python-nose git cmake vim emacs gfortran libblas-dev liblapack-dev libhdf5-dev gfortran liblapack-dev libblas-dev python-tables
 export LD_LIBARY_PATH=/usr/lib/x86_64-linux-gnu
 echo "export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu" >> ~/.bashrc
 cd $HOME
 mkdir opt
 cd opt
-git clone https://github.com/pydata/numexpr.git
-cd numexpr
-python setup.py install --user
-cd ..
-git clone https://github.com/PyTables/PyTables.git
-cd PyTables
-python setup.py install --user
-cd ..
 mkdir moab
 cd moab
 wget http://ftp.mcs.anl.gov/pub/fathom/moab-4.6.2.tar.gz
