@@ -44,8 +44,8 @@ cd PyTAPS-1.4/
 python setup.py --iMesh-path=$HOME/.local/ install --user
 cd ..
 # Install PyNE
-git clone https://github.com/pyne/pyne.git
-cd pyne
+#git clone https://github.com/pyne/pyne.git
+cd $HOME/Software/PyNE/pyne
 python setup.py install --hdf5=$HOME/opt/hdf5 --user
 echo "export PATH=$HOME/.local/bin:\$PATH" >> ~/.bashrc
 echo "export LD_LIBRARY_PATH=$HOME/.local/lib:\$LD_LIBRARY_PATH" >> ~/.bashrc
